@@ -1,0 +1,443 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  font-size: 1.5em;
+  scroll-behavior: smooth;
+}
+
+/* Pill-style navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 20px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.nav-links {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  padding: 10px 30px;
+  display: flex;
+  gap: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.75em;
+  color: #333;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 999px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #f1f1f1;
+}
+
+.nav-links a.active {
+  background-color: black;
+  color: white;
+}
+
+/* Logo & intro header */
+.logo {
+  display: none;
+}
+
+.intro {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.intro h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 1.5em;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: monospace;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #0074d9;
+}
+
+/* Content container */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 80px;
+}
+
+/* About Me Section */
+.right-column {
+  max-width: 600px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.section-title {
+  font-size: 3.25em;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 0.2em;
+  text-transform: lowercase;
+}
+
+.section-subtitle {
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.placeholder-text {
+  font-size: 1em;
+  line-height: 1.7;
+  margin-bottom: 0.5em;
+}
+
+/* Skills */
+.skill {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.skill p {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  height: 15px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 12px;
+  background-color: black;
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+.progress.python {
+  width: 50%;
+}
+
+.progress.javascript {
+  width: 50%;
+}
+
+.progress.htmlcss {
+  width: 75%;
+}
+
+/* Projects Section */
+#projects {
+  max-width: 700px;
+  margin: 80px auto 120px;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.project-card {
+  background-color: #fefefe;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.project-header h3 {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0;
+  color: black; /* dark text for light mode */
+  text-transform: none;
+}
+
+.status {
+  font-size: 0.8em;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status.in-progress {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.status.completed {
+  background-color: #111827;
+  color: white;
+}
+
+.status.planning {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.project-description {
+  color: #6b7280;
+  font-size: 1em;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.project-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75em;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  border: 1px solid #d1d5db;
+}
+
+/* Achievements Section */
+#achievements {
+  max-width: 1100px;
+  margin: 0 auto 120px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.achievement-card {
+  background-color: #fefefe;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: black; /* dark text for light mode */
+}
+
+body.dark-mode .project-header h3,
+body.dark-mode .achievement-title {
+  color: #eee; /* light text for dark mode */
+}
+
+.achievement-description {
+  font-size: 1em;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===== NEW FEATURES ===== */
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #E0E0E0; /* soft off-white */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .navbar {
+  background-color: #1F1F1F; /* dark navbar */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .navbar.scrolled {
+  background-color: #111111;
+  box-shadow: 0 4px 12px rgba(100, 165, 246, 0.3); /* subtle blue glow */
+}
+
+body.dark-mode .nav-links {
+  background-color: #1F1F1F;
+  border-color: #333333;
+  box-shadow: none;
+}
+
+body.dark-mode .nav-links a {
+  color: #A0A0A0; /* softer text */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-mode .nav-links a:hover {
+  background-color: #333844; /* dark blue-gray */
+  color: #eee; /* accent blue */
+}
+
+body.dark-mode .nav-links a.active {
+  background-color: #64B5F6;
+  color: #121212;
+  font-weight: 700;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .achievement-card {
+  background-color: #222222;
+  border-color: #333333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .project-description,
+body.dark-mode .achievement-description {
+  color: #C0C0C0;
+}
+
+body.dark-mode .tag {
+  background-color: #2A2A2A;
+  color: #B0B0B0;
+  border-color: #444444;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .tag:hover {
+  background-color: #3B3B4D;
+  color: #eee;
+  border-color: #eee;
+}
+
+body.dark-mode .skill p {
+  color: #E0E0E0;
+}
+
+body.dark-mode .progress-bar {
+  background-color: #333333;
+}
+
+body.dark-mode .progress {
+  background-color: #eee;
+}
+
+body.dark-mode #theme-toggle {
+  color: #eee;
+  background-color: transparent;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode #theme-toggle:hover {
+  color: #90CAF9;
+  background-color: rgba(100, 181, 246, 0.15);
+}
+
+/* Social links */
+body.dark-mode .social-links a {
+  color: #A0A0A0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .social-links a:hover {
+  color: #eee;
+}
+
+/* Dark mode toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  color: inherit;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Prevent content from hiding under navbar */
+body {
+  padding-top: 100px; /* adjust if navbar height changes */
+}
